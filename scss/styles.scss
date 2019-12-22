@@ -1,0 +1,182 @@
+@import'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'socials';
+@import 'slider';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.4rem, $text-color, 700, $text-ff, 1.8);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.section1 {
+    background-image: url('../files/computer.jpg');
+    background-repeat: no-repeat;
+    min-height: 650px;
+    text-align: center;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        display: inline-block;
+    }
+    &__menu-items {
+        list-style: none;
+        display: inline-flex;
+        justify-content: end;
+    }
+    &__menu-item {
+        width: 153px;
+        text-align: center;
+        position: relative;
+    }
+    &__menu-item--slash::after {
+        content: '1';
+        color: transparent;
+        position: absolute;
+        right: -10px;
+        border-left: 1px solid $text-color;
+        transform: rotate(20deg);
+    }
+    &__menu-link {
+        text-decoration: none;
+        color: $text-color;
+    }
+    &__title {
+        font-size: 5rem;
+        font-weight: 900;
+        letter-spacing: 1rem;
+        font-family: $title-ff;
+        margin: 90px 0 15px;
+    }
+    &__subtitle {
+        font-size: 3rem;
+        font-weight: 500;
+        font-family: $title-ff;
+        margin-bottom: 55px;
+    }
+    .btn {
+        border: $b-size solid $brand-color;
+        border-radius: 5px;
+        background-color: rgba($color: #000000, $alpha: 0);
+        color: $brand-color;
+        padding: 10px 25px;
+        font-size: 1.8rem;
+    }
+}
+
+.section2 {
+
+    &__images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__image {
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        font-size: 0;
+        &--bg {
+            background-color: $brand-color;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+    &__image1 {
+        width: 450px;
+        height: 302px;
+    }
+    &__image3 {
+        width: 450px;
+        height: 485px;
+    }
+}
+
+.section3 {
+    background-image: url('../files/men-computer.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    &__person {
+        max-width: 550px;
+        margin-left: 50%;
+        min-height: 500px;
+        padding: 85px 0;
+    }
+    &__person-name {
+        font-size: 3rem;
+        margin: 0;
+        line-height: 1;
+    }
+    &__person-pos {
+        font-size: 2.2rem;
+        font-weight: 400;
+        margin: 0;
+    }
+    &__person-about {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin: 25px 0;
+    }
+    .btn {
+        border: $b-size solid $alt-color;
+        border-radius: 5px;
+        background-color: rgba($color: #000000, $alpha: 0);
+        color: $alt-color;
+        padding: 10px 25px;
+        font-size: 1.4rem;
+    }
+}
+
+.section4 {
+    text-align: center;
+    &__title {
+        color: $brand-color;
+        font-size: 2.6rem;
+    }
+    &__form {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    &__input {
+        border: $b-size solid $alt-color;
+        display: inline-block;
+        width: 40%;
+        text-align: left;
+        margin: 10px;
+    }
+    &__icon {
+        background-color: $alt-color;
+        display: inline-block;
+        padding: 10px 20px;
+        height: 45px;
+    }
+    input {
+        height: 45px;
+        border: none;
+    }
+    textarea {
+        display: inline-block;
+    }
+}
