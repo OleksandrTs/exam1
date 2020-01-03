@@ -11,12 +11,12 @@
 html {
     height: 100%;
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 body {
     min-height: 100%;
     @include font(1.4rem, $text-color, 700, $text-ff, 1.8);
-    scroll-behavior: smooth;
 }
 
 .container {
@@ -24,53 +24,71 @@ body {
     margin: 0 auto;
 }
 
-.section1 {
-    background-image: url('../files/computer.jpg');
+.header {
+    background-image: linear-gradient(rgba(60, 73, 85, .7), rgba(60, 73, 85, .7)), url('../files/computer.jpg');
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     min-height: 650px;
     text-align: center;
-    &__header {
+    .container {
+        min-height: 100vh;
+        padding: 36px 0;
+    }
+    &__top {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
     &__logo {
         display: inline-block;
+        transition: all .2s ease-in;
+        &:hover,
+        &:focus,
+        &:active {
+            transform: scale(1.05);
+        }
     }
     &__menu-items {
         list-style: none;
         display: inline-flex;
-        justify-content: end;
+        justify-content: space-between;
+        & .header__menu-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            height: 2rem;
+            top: 3px;
+            right: -55px;
+            border-left: 1px solid rgba($color: #fff, $alpha: .5);
+            transform: rotate(30deg);
+        }
     }
     &__menu-item {
-        width: 153px;
-        text-align: center;
         position: relative;
-    }
-    &__menu-item--slash::after {
-        content: '1';
-        color: transparent;
-        position: absolute;
-        right: -10px;
-        border-left: 1px solid $text-color;
-        transform: rotate(20deg);
+        margin-right: 110px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
     &__menu-link {
         text-decoration: none;
         color: $text-color;
+    }
+    &__menu-item:hover &__menu-link {
+        color: $brand-color;
     }
     &__title {
         font-size: 5rem;
         font-weight: 900;
         letter-spacing: 1rem;
         font-family: $title-ff;
-        margin: 90px 0 15px;
+        margin: 27vh 0 0;
     }
     &__subtitle {
         font-size: 3rem;
         font-weight: 500;
         font-family: $title-ff;
-        margin-bottom: 55px;
+        margin: 10px 0 55px;
     }
     .btn {
         border: $b-size solid $brand-color;
@@ -82,41 +100,105 @@ body {
     }
 }
 
-.section2 {
-
-    &__images {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+.portfolio {
+    .container {
+        padding: 51px 0 90px;
     }
-    &__image {
+    &__menu {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 51px;
+        list-style: none;
+    }
+    &__menu-item {
+        background-color: #eaeaea;
+        font-size: 1.6rem;
+        padding: 4px 20px;
         border-radius: 5px;
-        overflow: hidden;
-        position: relative;
-        font-size: 0;
-        &--bg {
+        margin: 0 20px;
+        &:hover, &:hover .portfolio__menu-link,
+        &:focus, &:focus .portfolio__menu-link,
+        &:active, &:active .portfolio__menu-link {
             background-color: $brand-color;
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
+            color: $text-color;
         }
     }
-    &__image1 {
-        width: 450px;
-        height: 302px;
-    }
-    &__image3 {
-        width: 450px;
-        height: 485px;
+    &__menu-link {
+        color: $alt-color;
+        text-decoration: none;
     }
 }
 
-.section3 {
-    background-image: url('../files/men-computer.jpg');
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+    gap: 40px;
+    &__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    &__item1 {
+        grid-column: span 7;
+        grid-row: span 9;
+    }
+    &__item2 {
+        grid-column: span 10;
+        grid-row: span 12;
+    }
+    &__item3 {
+        grid-column: span 7;
+        grid-row: span 13;
+    }
+    &__item4 {
+        grid-column: span 10;
+        grid-row: span 10;
+    }
+    &__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__focus {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $brand-color;
+        text-decoration: none;
+        color: $text-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        z-index: -1;
+    }
+    &__item:hover &__focus,
+    &__item:focus &__focus,
+    &__item:active &__focus {
+        z-index: 1;
+    }
+    &__focus-title {
+        font-size: 3rem;
+        padding: 0;
+        margin: 0;
+    }
+    &__focus-subtitle {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.about {
+    background-image: linear-gradient(rgba(60, 73, 85, .7), rgba(60, 73, 85, .7)), url('../files/men-computer.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
     &__person {
         max-width: 550px;
@@ -139,44 +221,152 @@ body {
         font-weight: 400;
         margin: 25px 0;
     }
-    .btn {
-        border: $b-size solid $alt-color;
+    &__btn {
+        background-color: rgba($color: $alt-color, $alpha: 0);
         border-radius: 5px;
-        background-color: rgba($color: #000000, $alpha: 0);
+        border: $b-size solid $alt-color;
         color: $alt-color;
-        padding: 10px 25px;
         font-size: 1.4rem;
+        padding: 10px 25px;
+        text-decoration: none;
+        text-transform: uppercase;
     }
 }
 
-.section4 {
+.contact {
     text-align: center;
+    .container {
+        width: 700px;
+        padding: 30px 0;
+    }
     &__title {
         color: $brand-color;
         font-size: 2.6rem;
+        line-height: 1;
+        margin-bottom: 30px;
+        text-transform: uppercase;
     }
     &__form {
-        max-width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         margin: 0 auto;
     }
     &__input {
+        border-radius: 5px;
         border: $b-size solid $alt-color;
         display: inline-block;
-        width: 40%;
         text-align: left;
-        margin: 10px;
+        width: calc(50% - 15px);
     }
     &__icon {
         background-color: $alt-color;
         display: inline-block;
         padding: 10px 20px;
-        height: 45px;
+    }
+    &__nom {
+        margin-right: 30px;
+    }
+    &__message {
+        margin: 30px 0;
+        width: 100%;
+        display: flex;
+        .contact__icon {
+            height: 230px;
+        }
     }
     input {
         height: 45px;
         border: none;
+        display: inline-block;
+        width: 276px;
+        outline: none;
     }
     textarea {
-        display: inline-block;
+        //border: none;
+        resize: none;
+        outline: none;
+        width: 100%;
+    }
+    &__btn {
+        background-color: $brand-color;
+        border: 1px solid $brand-color;
+        border-radius: 5px;
+        color: $text-color;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 15px;
+        width: 100%;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $text-color;
+        color: $text-color;
+    }
+}
+
+.footer {
+    background-color: $alt-color;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 200px;
+    }
+    &__text {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+    &__text-link {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: 700;
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+    &__socials {
+        display: flex;
+        justify-content: space-between;
+        width: 317px;
+    }
+    &__social {
+        width: 50px;
+        height: 55px;
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        position: relative;
+        &-img {
+            color: $text-color;
+            font-size: 2.3rem;
+            font-weight: 400;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &--tw {
+            background-color: #55acee;
+        }
+        &--in {
+            background-color: #0976b4;
+        }
+        &--drb {
+            background-color: #ea4c89;
+        }
+        &--be {
+            background-color: #1769ff;
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }

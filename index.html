@@ -6,102 +6,144 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/styles.css ">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Default Title</title> 
+    <title>Foliac</title> 
 </head>
 <body>
-    <section class="section1">
+    <header class="header">
         <div class="container">
-            <div class="section1__header">
-                <div class="section1__logo">
+            <div class="header__top">
+                <a href="#" class="header__logo">
                     <img src="files/foliac-logo.png" alt="foliac logo">
-                </div>
-                <div class="section1__menu">
-                    <ul class="section1__menu-items">
-                        <li class="section1__menu-item section1__menu-item--slash">
-                            <a href="#" class="section1__menu-link">Accueil</a>
+                </a>
+                <nav class="header__menu">
+                    <ul class="header__menu-items">
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Accueil</a>
                         </li>
-                        <li class="section1__menu-item section1__menu-item--slash">
-                            <a href="#section2" class="section1__menu-link">Portfolio</a>
+                        <li class="header__menu-item">
+                            <a href="#portfolio" class="header__menu-link">Portfolio</a>
                         </li>
-                        <li class="section1__menu-item section1__menu-item--slash">
-                            <a href="#section3" class="section1__menu-link">About</a>
+                        <li class="header__menu-item">
+                            <a href="#about" class="header__menu-link">About</a>
                         </li>
-                        <li class="section1__menu-item">
-                            <a href="#section4" class="section1__menu-link">Contact</a>
+                        <li class="header__menu-item">
+                            <a href="#contact" class="header__menu-link">Contact</a>
                         </li>
                     </ul>
+                </nav>
+            </div>
+            <h1 class="header__title">voici votre prochain portfolio</h1>
+            <h2 class="header__subtitle">un template psd simple et gratuit</h2>
+            <button class="btn" id="header__btn">mes travaux</button>
+        </div>
+    </header>
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <nav>
+                <ul class="portfolio__menu">
+                    <li class="portfolio__menu-item">
+                        <a href="#" class="portfolio__menu-link">Tous les projets</a>
+                    </li>
+                    <li class="portfolio__menu-item">
+                        <a href="#" class="portfolio__menu-link">Webdesign</a>
+                    </li>
+                    <li class="portfolio__menu-item">
+                        <a href="#" class="portfolio__menu-link">UI/UX design</a>
+                    </li>
+                    <li class="portfolio__menu-item">
+                        <a href="#" class="portfolio__menu-link">Illustration</a>
+                    </li>
+                    <li class="portfolio__menu-item">
+                        <a href="#" class="portfolio__menu-link">Motion design</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="grid">
+                <div class="grid__item grid__item1">
+                    <img class="grid__img" src="files/portfolio-1.jpg" alt="">
+                    <a href="#" class="grid__focus">
+                        <h3 class="grid__focus-title">Forest app</h3>
+                        <p class="grid__focus-subtitle">application mobile</p></a>
+                </div>
+                <div class="grid__item grid__item2">
+                    <img class="grid__img" src="files/portfolio-2.jpg" alt="">
+                    <a href="#" class="grid__focus">
+                        <h3 class="grid__focus-title">Forest app</h3>
+                        <p class="grid__focus-subtitle">application mobile</p></a>
+                </div>
+                <div class="grid__item grid__item3">
+                    <img class="grid__img" src="files/portfolio-3.jpg" alt="">
+                    <a href="#" class="grid__focus">
+                        <h3 class="grid__focus-title">Forest app</h3>
+                        <p class="grid__focus-subtitle">application mobile</p></a>
+                </div>
+                <div class="grid__item grid__item4">
+                    <img class="grid__img" src="files/portfolio-4.jpg" alt="">
+                    <a href="#" class="grid__focus">
+                        <h3 class="grid__focus-title">Forest app</h3>
+                        <p class="grid__focus-subtitle">application mobile</p></a>
                 </div>
             </div>
-            <h1 class="section1__title">voici votre prochain portfolio</h1>
-            <h2 class="section1__subtitle">un template psd simple et gratuit</h2>
-            <button class="btn" id="section1__btn">mes travaux</button>
         </div>
     </section>
-    <section class="section2" id="section2">
+    <main class="about" id="about">
         <div class="container">
-        
-
-            <div class="section2__images">
-                <div class="section2__image section2__image1">
-                    <img src="files/section2-1.jpg" alt="gallery image">
-                    <div class="section2__image--bg"></div>
-                </div>
-                <div class="section2__image section2__image2">
-                    <img src="files/section2-2.jpg" alt="gallery image">
-                    <div class="section2__image--bg"></div>
-                </div>
-                <div class="section2__image section2__image3">
-                    <img src="files/section2-3.jpg" alt="gallery image">
-                    <div class="section2__image--bg"></div>
-                </div>
-                <div class="section2__image section2__image4">
-                    <img src="files/section2-4.jpg" alt="gallery image">
-                    <div class="section2__image--bg"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section3" id="section3">
-        <div class="container">
-            <div class="section3__person">
-                <h3 class="section3__person-name">Michel Dupont</h3>
-                <p class="section3__person-pos">Webdesigner, illustrateur, auteur</p>
-                <p class="section3__person-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <a href="#section4">
-                    <button class="btn" id="section3__btn">ME CONTACTER</button>
+            <div class="about__person">
+                <h3 class="about__person-name">Michel Dupont</h3>
+                <p class="about__person-pos">Webdesigner, illustrateur, auteur</p>
+                <p class="about__person-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <a href="#contact" class=" btn about__btn">
+                    ME CONTACTER
                 </a>
             </div>
 
         </div>
-    </section>
-    <section class="section4" id="section4">
+    </main>
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section4__title">ME CONTACTER</h2>
-            <form action="#" class="section4__form">
-                <div class="section4__input">
-                    <div class="section4__icon">
+            <h2 class="contact__title">ME CONTACTER</h2>
+            <form action="#" class="contact__form" name="contact">
+                <div class="contact__nom contact__input">
+                    <span class="contact__icon">
                         <i class="fas fa-user"></i>
-                    </div>
-                    <input type="text" id="nom" placeholder="Votre nom">
+                    </span>
+                    <input type="text" id="nom" placeholder="Votre nom" required>
                 </div>
-                <div class="section4__input">
-                    <div class="section4__icon">
+                <div class="contact__email contact__input">
+                    <span class="contact__icon">
                         <i class="fas fa-user"></i>
-                    </div>
-                    <input type="email" id="email" placeholder="Votre email">
+                    </span>
+                    <input type="email" id="email" placeholder="Votre email" required>
                 </div>
-                <div class="section4__input">
-                    <div class="section4__icon">
+                <div class="contact__message contact__input">
+                    <span class="contact__icon">
                         <i class="fas fa-user"></i>
-                    </div>
+                    </span>
                     <textarea name="text" id="message" cols="30" rows="10" placeholder="Votre message"></textarea>
                 </div>
-                <button type="submit">ENVOYER</button>
+                <button type="submit" class="btn contact__btn">ENVOYER</button>
             </form>
         </div>
     </section>
-
+    <footer class="footer">
+        <div class="container">
+            <span class="footer__text">Copyright © 2015 by beneggen - <a href="#" target="blank" class="footer__text-link">www.beneggen.fr</a></span>
+            <div class="footer__socials">
+                <a href="#" target="blank" class="footer__social footer__social--tw">
+                    <i class="fab fa-twitter footer__social-img"></i>
+                </a>
+                <a href="#" target="blank" class="footer__social footer__social--in">
+                    <i class="fab fa-linkedin footer__social-img"></i>
+                </a>
+                <a href="#" target="blank" class="footer__social footer__social--drb">
+                    <i class="fab fa-dribbble footer__social-img"></i>
+                </a>
+                <a href="#" target="blank" class="footer__social footer__social--be">
+                    <i class="fab fa-behance footer__social-img"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
     <script src="https://kit.fontawesome.com/0dd4081373.js" crossorigin="anonymous"></script>
 </body>
 </html>
